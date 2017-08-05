@@ -1,0 +1,17 @@
+/*================ Links & Buttons ================*/
+a {
+  color: $color-primary;
+  text-decoration: none;
+}
+
+.btn {
+  @include prefix('user-select', 'none', moz ms webkit spec);
+  @include prefix(appearance, none, webkit moz spec);
+  display: inline-block;
+  width: auto;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  border: 0;
+}

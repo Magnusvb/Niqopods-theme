@@ -1,0 +1,97 @@
+/*================ Color Variables ================*/
+$color-primary: {{ settings.color_primary | default: 'hsla(207, 36%, 29%, 1.00)' }};
+$color-secondary_1: {{ settings.color_secondary_1 | default: 'hsla(239, 31%, 33%, 1.00)' }};
+$color-secondary_2: {{ settings.color_secondary_2 | default: 'hsla(156, 38%, 30%, 1.00)' }};
+
+$color-primary-light: {{ settings.color_primary_light | default: 'hsla(207, 17%, 51%, 1.00)' }};
+$color-primary-dark: {{ settings.color_primary_dark | default: 'hsla(207, 67%, 13%, 1.00)' }};
+
+// $color-secondary_1_dark: {{ settings.color_secondary_1_dark | default: '#100f3f' }};
+$color-secondary_2_dark: {{ settings.color_secondary_2_dark | default: 'hsla(156, 71%, 14%, 1.00)' }};
+
+// Text colors
+$color-body-text: {{ settings.color_body_text | default: 'hsla(0, 0%, 13%, 0.87)' }};
+$color-body-text_medium: hsla(0, 0%, 13%, 0.54);
+$color-body-text_light: hsla(0, 0%, 100%, 0.9);
+
+// Link color
+$color-link: $color-primary;
+
+// Backgrounds
+$color-body: #fff;
+
+// Border colors
+$color-border: $color-secondary_1; // #f6f6f6
+
+// Button colors
+$primary-button-color: $color-primary;
+$checkout-button-color: {{ settings.color_checkout_button | default: 'hsla(156, 38%, 30%, 1.00)' }};
+
+// Helper colors for form error states
+$color-disabled: #000;
+$color-disabled-border: #000;
+$color-error: #000;
+$color-error-bg: #000;
+$color-success: #000;
+$color-success-bg: #000;
+
+/*================ Typography Variables ================*/
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$font-stack-header: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-weight-header: $font-weight-bold;
+
+$font-stack-body: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-size-base: {{ settings.type_base_size }};
+
+/*============================================================================
+  Grid Breakpoints and Class Names
+    - Do not change the variable names
+==============================================================================*/
+$grid-medium: 750px;
+$grid-large: 990px;
+$grid-widescreen: 1400px;
+$grid-gutter: 30px;
+
+$small: 'small';
+$medium: 'medium';
+$medium-down: 'medium-down';
+$medium-up: 'medium-up';
+$large: 'large';
+$large-down: 'large-down';
+$large-up: 'large-up';
+$widescreen: 'widescreen';
+
+// The `$breakpoints` list is used to build our media queries.
+// You can use these in the media-query mixin.
+$breakpoints: (
+  $small '(max-width: #{$grid-medium - 1})',
+  $medium '(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})',
+  $medium-down '(max-width: #{$grid-large - 1})',
+  $medium-up '(min-width: #{$grid-medium})',
+  $large '(min-width: #{$grid-large}) and (max-width: #{$grid-widescreen - 1})',
+  $large-down '(max-width: #{$grid-widescreen - 1})',
+  $large-up '(min-width: #{$grid-large})',
+  $widescreen '(min-width: #{$grid-widescreen})'
+);
+
+/*============================================================================
+  Generate breakpoint-specific column widths and push classes
+    - Default column widths: $breakpoint-has-widths: ($small, $medium-up);
+    - Default is no push classes
+    - Will not work if `styles/global/grid.scss` is removed
+==============================================================================*/
+$breakpoint-has-widths: ($small, $medium-up);
+$breakpoint-has-push: ();
+
+/*================ Sizing Variables ================*/
+$width-site: 1180px;
+$gutter: 30px;
+
+/*================ Z-Index ================*/
+$z-index-dropdown: 2;
+$z-index-skip-to-content: 10000; // really high to be safe of app markup
+
+/*================ SVG ================*/
+$svg-select-icon: #{'{{ "ico-select.svg" | asset_url }}'};
