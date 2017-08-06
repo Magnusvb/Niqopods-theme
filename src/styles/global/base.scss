@@ -25,3 +25,9 @@ h4,
 h6 {
   font-family: $font-stack-body;
 }
+
+ul {
+  font-family: $font-stack-body;
+  list-style-type: none;
+  padding-left: 0;
+}
