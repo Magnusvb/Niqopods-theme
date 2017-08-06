@@ -6,6 +6,7 @@ html {
 
 a {
   color: $color-link;
+//   border-bottom: 2px dotted $color-link;
   text-decoration: none;
 }
 
@@ -13,6 +14,14 @@ p {
   font-family: $font-stack-body;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4 {
   font-family: $font-stack-header;
+}
+
+h4,
+h6 {
+  font-family: $font-stack-body;
 }

@@ -117,3 +117,9 @@
   height: auto;
   margin: 0;
 }
+
+
+/*================ Magnus ================*/
+@mixin dropshadow {
+  box-shadow: 0px 2px 4px 0px rgba(36, 35, 90, 0.60);
+}
