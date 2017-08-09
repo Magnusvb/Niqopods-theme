@@ -58,6 +58,7 @@ $font-size-base: {{ settings.type_base_size }};
 ==============================================================================*/
 $grid-medium: 750px;
 $grid-large: 990px;
+$grid-big: 1200px;
 $grid-widescreen: 1400px;
 $grid-gutter: 30px;
 
@@ -68,6 +69,7 @@ $medium-up: 'medium-up';
 $large: 'large';
 $large-down: 'large-down';
 $large-up: 'large-up';
+$big-up: 'large-up';
 $widescreen: 'widescreen';
 
 // The `$breakpoints` list is used to build our media queries.
@@ -80,6 +82,7 @@ $breakpoints: (
   $large '(min-width: #{$grid-large}) and (max-width: #{$grid-widescreen - 1})',
   $large-down '(max-width: #{$grid-widescreen - 1})',
   $large-up '(min-width: #{$grid-large})',
+  $big-up '(min-width: #{$grid-big})',
   $widescreen '(min-width: #{$grid-widescreen})'
 );
 
