@@ -1,6 +1,6 @@
 <h1>This is the Hero banners</h1>
 
-<div class="hero">
+<div class="heros">
 {% for block in section.blocks %}
 <div class="hero-item">
   <img src="{{ section.settings.hero }}" alt="">
@@ -16,23 +16,12 @@
 -->
 {% schema %}
   {
-    "name": "Hero banners",
-    "min_block": 3,
-    "max_block": 3,
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "hero",
-        "label": "Banner",
-        "default": "???"
-      }
-    ],
+    "name": "Hero",
+    "max_blocks": 3,
     "blocks": [
       {
         "type": "image_picker",
-        "id": "hero",
-        "label": "Banner",
-        "default": "???"
+        "name": "Heroimage"
       }
     ],
     "presets": [
