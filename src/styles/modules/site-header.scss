@@ -147,14 +147,19 @@ header {
   align-items: center;
 
   li {
-    border: 1px solid $color-primary-light;
+    border: 1px solid lighten($color-primary-light, 35%);
     flex: 1 1 30%;
     margin-top: -1px;
-    padding: .7rem;
+//     padding: .3rem;
   }
 
   a {
+    display: block;
     color: $color-body-text;
+    padding: .5rem;
+    &:hover {
+      background-color: $color-link_hover;
+    }
   }
 
   @include media-query($medium-up) {
@@ -162,7 +167,7 @@ header {
 
     li {
       border: 0;
-      border-right: 1px solid $color-primary-light;
+      border-right: 1px solid lighten($color-primary-light, 35%);
       &:last-of-type {
         border-right: 0;
       }
@@ -173,11 +178,16 @@ header {
     flex-wrap: wrap;
 
     li {
-      border: 1px solid $color-primary-light;
+      border: 1px solid lighten($color-primary-light, 35%);
       flex-basis: 30%;
       &:last-of-type {
-        border-right: 1px solid $color-primary-light;
+        border-right: 1px solid lighten($color-primary-light, 35%);
       }
     }
   }
+}
+
+.site-nav--active {
+  //background-color: aqua;
+  border-bottom: 1px solid $color-primary;
 }
