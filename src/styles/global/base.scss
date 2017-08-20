@@ -5,9 +5,12 @@ html {
 }
 
 a {
-  color: $color-link;
-//   border-bottom: 2px dotted $color-link;
   text-decoration: none;
+  color: $color-link;
+//   border-bottom: 1px dotted $color-link;
+  &:hover {
+//     background-color: $color-link_hover;
+  }
 }
 
 p {
@@ -29,5 +32,6 @@ h6 {
 ul {
   font-family: $font-stack-body;
   list-style-type: none;
+  margin-top: 0;
   padding-left: 0;
 }

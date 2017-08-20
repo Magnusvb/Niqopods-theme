@@ -17,12 +17,17 @@ button {
   border: 1px solid $color-border;
   color: #fff;
   font-weight: 700;
-  padding: 0.5rem 1rem;
+  padding: .5rem 1rem;
   border-radius: $borderradius;
   -webkit-appearance: none;
   -moz-appearance: none;
-  margin-left: 0.2rem;
+  margin-left: .2rem;
   text-decoration: none;
   vertical-align: middle;
   white-space: nowrap;
+}
+
+.search-button {
+  border-radius: 100%;
+  padding: .5rem;
 }
