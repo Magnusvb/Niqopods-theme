@@ -3,25 +3,35 @@
 <div class="heros">
 {% for block in section.blocks %}
 <div class="hero-item">
-  <img src="{{ section.settings.hero }}" alt="">
+  {% if block.settings.image != blank %}
+  <a href="{{ block.settings.herolink }}"><img src="{{ block.settings.image }}" alt=""></a>
+  {% else %}
+  <img src="{{ 'placeholder-banner.png' | asset_img_url: 'grande' }}" alt="">
+  {% endif %}
 </div>
 {% endfor %}
 </div>
 
-<!--
-<img src="{{ section.settings.hero1 }}" alt="">
-
-<p> {{ section.settings.text-box }} </p>
-<p> {{ section.settings.text }} </p>
--->
 {% schema %}
   {
-    "name": "Hero",
+    "name": "Hero banners",
     "max_blocks": 3,
     "blocks": [
       {
         "type": "image_picker",
-        "name": "Heroimage"
+        "name": "Add image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "heroimage",
+            "label": "Hero image"
+          },
+          {
+            "id": "herolink",
+            "type": "url",
+         		"label": "Hero link"
+          }
+        ]
       }
     ],
     "presets": [
