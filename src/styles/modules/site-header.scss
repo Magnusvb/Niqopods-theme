@@ -135,9 +135,9 @@ header {
 }
 
 .main-nav {
+  background-color: $mainnav-bg;
   @include media-query($widescreen) {
     flex-basis: 40%;
-    // flex: 1 1 40%;
   }
 }
 

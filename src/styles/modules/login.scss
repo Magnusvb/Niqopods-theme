@@ -3,11 +3,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  .loginbox {
-    border: 1px solid $color-border;
-    background-color: $color-body;
-    padding: 2rem;
-    border-radius: 1rem;
+  height: 100%;
+}
+
+.loginbox {
+  border: 1px solid $color-border;
+  background-color: $color-body;
+  padding: 2rem;
+  border-radius: 1rem;
+
+  header {
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 3rem;
+    line-height: 1;
+    margin: 0;
+  }
+
+  main {
+    font-family: $font-stack-body;
   }
 }
