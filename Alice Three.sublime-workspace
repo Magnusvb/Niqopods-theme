@@ -144,13 +144,18 @@
 	"buffers":
 	[
 		{
-			"contents": "<style>\n  {% if section.settings.logo != blank %}\n    .site-header__logo-image {\n      max-width: {{ section.settings.logo_max_width }}px;\n    }\n  {% endif %}\n</style>\n<div data-section-id=\"{{ section.id }}\" data-section-type=\"header-section\">\n  <header role=\"banner\">\n    <section class=\"masthead\">\n      <article class=\"logotyp header-item\">\n        {% if template.name == 'index' %}\n          <h1 itemscope itemtype=\"http://schema.org/Organization\">\n        {% else %}\n          <div class=\"h1\" itemscope itemtype=\"http://schema.org/Organization\">\n        {% endif %}\n            <a href=\"/\" itemprop=\"url\" class=\"site-logo{% if section.settings.logo != blank %} site-header__logo-image{% endif %}\">\n              {% if section.settings.logo != blank %}\n                {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}\n                <img src=\"{{ section.settings.logo | img_url: image_size }}\"\n                     srcset=\"{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x\"\n                     alt=\"{{ section.settings.logo.alt | default: shop.name }}\"\n                     itemprop=\"logo\">\n              {% else %}\n                {{ shop.name }}\n              {% endif %}\n            </a>\n        {% if template.name == 'index' %}\n          </h1>\n        {% else %}\n          </div>\n        {% endif %}\n      </article>\n\n      <section class=\"customer-search header-item\">\n        <article class=\"customer header-item\">\n            <ul class=\"customer-links\">\n              <li>\n                <a href=\"/cart\">\n                {% include 'icon-cart' %}\n                {{ 'layout.cart.title' | t }}\n                ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }})\n                </a>\n              </li>\n                {% if shop.customer_accounts_enabled %}\n                {% if customer %}\n                  <li>\n                    {% if customer.first_name != blank %}\n                      {% capture first_name %}<a href=\"/account\">{{ customer.first_name }}</a>{% endcapture %}\n                      {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}\n                    {% else %}\n                      <a href=\"/account\">{{ 'layout.customer.account' | t }}</a>\n                    {% endif %}\n                  </li>\n                  <li>\n                    {{ 'layout.customer.log_out' | t | customer_logout_link }}\n                  </li>\n                {% else %}\n                  <li>\n                    {{ 'layout.customer.log_in' | t | customer_login_link }}\n                  </li>\n                  <li>\n                    {{ 'layout.customer.create_account' | t | customer_register_link }}\n                  </li>\n                {% endif %}\n              </ul>\n            {% endif %}\n        </article>\n\n        <article class=\"search header-item\">\n          <form action=\"/search\" method=\"get\" role=\"search\">\n            <label for=\"Search\" class=\"label-hidden\">\n              {{ 'general.search.placeholder' | t }}\n            </label>\n            <input type=\"search\"\n                   name=\"q\"\n                   id=\"Search\"\n                   value=\"{{ search.terms | escape }}\"\n                   placeholder=\"{{ 'general.search.placeholder' | t }}\">\n            <button type=\"submit\" class=\"btn search-button\">\n              {% include 'icon-search' %}\n              <span class=\"icon-fallback-text\">{{ 'general.search.submit' | t }}</span>\n            </button>\n          </form>\n        </article>\n      </section>\n    </section>\n\n    <nav role=\"navigation\" class=\"main-nav header-item\">\n      <ul class=\"site-nav\">\n        {% for link in linklists[section.settings.main_linklist].links %}\n          {%- assign child_list_handle = link.title | handleize -%}\n          {% if menus[child_list_handle].links != blank %}\n            <li class=\"site-nav--has-submenu{% if link.active %} site-nav--active{% endif %}\">\n              <a href=\"{{ link.url }}\" class=\"site-nav__link\">\n                {{ link.title }}\n                {% include 'icon-arrow-down' %}\n              </a>\n              <ul class=\"site-nav__submenu\">\n                {% for childlink in menus[child_list_handle].links %}\n                  <li>\n                    <a href=\"{{ childlink.url }}\" class=\"site-nav__link {% if link.active %}site-nav--active{% endif %}\">{{ childlink.title | escape }}</a>\n                  </li>\n                {% endfor %}\n              </ul>\n            </li>\n          {% else %}\n            <li>\n              <a href=\"{{ link.url }}\" class=\"site-nav__link {% if link.active %}site-nav--active{% endif %}\">{{ link.title }}</a>\n            </li>\n          {% endif %}\n        {% endfor %}\n      </ul>\n    </nav>\n\n  </header>\n</div>\n\n{% schema %}\n  {\n    \"name\": \"Header\",\n    \"settings\": [\n      {\n        \"type\": \"image_picker\",\n        \"id\": \"logo\",\n        \"label\": \"Logo image\"\n      },\n      {\n        \"type\": \"range\",\n        \"id\": \"logo_max_width\",\n        \"min\": 50,\n        \"max\": 450,\n        \"step\": 10,\n        \"unit\": \"px\",\n        \"label\": \"Custom logo width\",\n        \"default\": 250\n      },\n      {\n        \"type\": \"link_list\",\n        \"id\": \"main_linklist\",\n        \"label\": \"Menu\",\n        \"default\": \"main-menu\"\n      }\n    ]\n  }\n{% endschema %}\n",
-			"file": "src/sections/header.liquid",
-			"file_size": 5364,
-			"file_write_time": 131477124570000000,
+			"file": "src/sections/footer.liquid",
 			"settings":
 			{
-				"buffer_size": 5364,
+				"buffer_size": 2475,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/styles/settings/variables.scss.liquid",
+			"settings":
+			{
+				"buffer_size": 4399,
 				"line_ending": "Unix"
 			}
 		}
@@ -163,9 +168,33 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "packa",
+		"last_filter": "sche",
 		"selected_items":
 		[
+			[
+				"sche",
+				"UI: Select Color Scheme"
+			],
+			[
+				"them",
+				"UI: Select Color Scheme"
+			],
+			[
+				"packins",
+				"Package Control: Install Package"
+			],
+			[
+				"packre",
+				"Package Control: Remove Package"
+			],
+			[
+				"packlis",
+				"Package Control: List Packages"
+			],
+			[
+				"packup",
+				"Package Control: Upgrade Package"
+			],
 			[
 				"packa",
 				"Package Control: Install Package"
@@ -177,10 +206,6 @@
 			[
 				"packag",
 				"Package Control: Install Package"
-			],
-			[
-				"them",
-				"UI: Select Theme"
 			],
 			[
 				"packain",
@@ -235,7 +260,7 @@
 				"Package Control: Enable Package"
 			]
 		],
-		"width": 444.0
+		"width": 706.0
 	},
 	"console":
 	{
@@ -258,18 +283,25 @@
 		"/Users/magnus/Documents/websites-static/alice-three",
 		"/Users/magnus/Documents/websites-static/alice-three/src",
 		"/Users/magnus/Documents/websites-static/alice-three/src/sections",
+		"/Users/magnus/Documents/websites-static/alice-three/src/styles",
+		"/Users/magnus/Documents/websites-static/alice-three/src/styles/modules",
+		"/Users/magnus/Documents/websites-static/alice-three/src/styles/settings",
 		"/Users/magnus/Documents/websites-static/alice-three/src/templates"
 	],
 	"file_history":
 	[
+		"/Users/magnus/Documents/websites-static/alice-three/src/styles/modules/banners.scss",
+		"/Users/magnus/Documents/websites-static/alice-three/src/styles/settings/variables.scss.liquid",
+		"/Users/magnus/Documents/websites-static/alice-three/src/sections/herobanners.liquid",
+		"/Users/magnus/Library/Application Support/Sublime Text 3/Packages/User/ColorHighlighter.sublime-settings",
+		"/Users/magnus/Library/Application Support/Sublime Text 3/Packages/Color Highlighter/ColorHighlighter.sublime-settings",
+		"/Users/magnus/Documents/websites-static/alice-three/src/sections/header.liquid",
 		"/Users/magnus/Documents/websites-static/skepplanda-mm/source/stylesheets/components/_cards.scss",
 		"/Users/magnus/Documents/websites-static/skepplanda-mm/source/stylesheets/layout/_page.scss",
 		"/Users/magnus/Documents/websites-static/pure-white-shopify/assets/timber.scss.liquid",
 		"/Users/magnus/Documents/websites-static/pure-white-shopify/templates/collection.liquid",
 		"/Users/magnus/Documents/websites-static/pure-white-shopify/layout/theme.liquid",
 		"/Users/magnus/Documents/websites-static/pure-white-shopify/templates/product.liquid",
-		"/Users/magnus/Library/Application Support/Sublime Text 3/Packages/Color Highlighter/ColorHighlighter.sublime-settings",
-		"/Users/magnus/Library/Application Support/Sublime Text 3/Packages/User/ColorHighlighter.sublime-settings",
 		"/Users/magnus/Library/Application Support/Sublime Text 3/Packages/User/Emmet.sublime-settings",
 		"/Users/magnus/Library/Application Support/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
 		"/Users/magnus/Documents/websites-static/pure-white-shopify/templates/index.liquid",
@@ -298,7 +330,7 @@
 	],
 	"find":
 	{
-		"height": 31.0
+		"height": 44.0
 	},
 	"find_in_files":
 	{
@@ -329,29 +361,29 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/sections/header.liquid",
+					"file": "src/sections/footer.liquid",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5364,
+						"buffer_size": 2475,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1407,
-								1407
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
+							"color_scheme": "Packages/User/Color Highlighter/themes/Mariana.tmTheme",
 							"git_gutter_is_enabled": true,
 							"syntax": "Packages/Siteleaf Liquid Syntax/Syntaxes/HTML (Liquid).tmLanguage",
 							"tab_size": 2,
@@ -359,6 +391,39 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/styles/settings/variables.scss.liquid",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4399,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1422,
+								1422
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"color_scheme": "Packages/User/Color Highlighter/themes/Mariana.tmTheme",
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 231.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -420,6 +485,10 @@
 		"selected_items":
 		[
 			[
+				"bannsc",
+				"src/styles/modules/banners.scss"
+			],
+			[
 				"page",
 				"source/stylesheets/layout/_page.scss"
 			],
@@ -458,7 +527,15 @@
 		[
 			[
 				"",
-				"~/Documents/websites-static/alice-two-sfy/alice-two-sfy.sublime-project"
+				"/Applications/MAMP/htdocs/skepplanda-crt/Skepplanda CRT.sublime-workspace"
+			],
+			[
+				"ske",
+				"/Applications/MAMP/htdocs/skepplanda-crt/Skepplanda CRT.sublime-workspace"
+			],
+			[
+				"skep",
+				"/Applications/MAMP/htdocs/skepplanda-crt/Skepplanda CRT.sublime-workspace"
 			]
 		],
 		"width": 591.0

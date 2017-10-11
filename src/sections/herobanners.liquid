@@ -1,5 +1,3 @@
-<h1>This is the Hero banners</h1>
-
 <div class="hero">
 {% if block.settings.image != blank %}
 {% for block in section.blocks limit: section.block.size %}
@@ -9,13 +7,13 @@
 {% endfor %}
 {% else %}
   <div class="hero-item">
-    {{ 'placeholder-banner.png' | asset_url | img_tag: 'placeholder' }}
+    {{ 'placeholder-banner-530.png' | asset_url | img_tag: 'placeholder' }}
   </div>
   <div class="hero-item">
-    {{ 'placeholder-banner.png' | asset_url | img_tag: 'placeholder' }}
+    {{ 'placeholder-banner-530.png' | asset_url | img_tag: 'placeholder' }}
   </div>
   <div class="hero-item">
-    {{ 'placeholder-banner.png' | asset_url | img_tag: 'placeholder' }}
+    {{ 'placeholder-banner-530.png' | asset_url | img_tag: 'placeholder' }}
   </div>
 {% endif %}
 </div>

@@ -1,8 +1,17 @@
 /*-------------- Hero banners on the home page -------------------*/
 .hero {
-  border: 1px solid pink;
+  display: flex;
+  flex-direction: column;
+
+  @include media-query($medium-up) {
+    flex-direction: row;
+  }
 }
 
 .hero-item {
-  border: 1px solid lime;
+  padding-right: 1rem;
+
+  &:last-of-type {
+    padding-right: 0;
+  }
 }

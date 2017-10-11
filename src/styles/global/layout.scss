@@ -1,7 +1,13 @@
 /*================ General layout styles ================*/
 .page-width {
+  /*border: 1px solid lawngreen;*/
   @include clearfix();
   max-width: $width-site;
   padding: 0 $gutter;
   margin: 0 auto;
+}
+
+main {
+  max-width: $width-site;
+  margin: auto;
 }
