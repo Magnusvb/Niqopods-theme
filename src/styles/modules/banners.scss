@@ -1,7 +1,9 @@
 /*-------------- Hero banners on the home page -------------------*/
 .hero {
   display: flex;
+  /*flex-wrap: wrap;*/
   flex-direction: column;
+  align-items: center;
 
   @include media-query($medium-up) {
     flex-direction: row;
@@ -9,9 +11,15 @@
 }
 
 .hero-item {
-  padding-right: 1rem;
+  flex: 1 1;
+  padding-bottom: 1rem;
 
-  &:last-of-type {
-    padding-right: 0;
+  @include media-query($medium-up) {
+    padding-right: 1rem;
+
+    &:last-of-type {
+      padding-right: 0;
+      align-self: center;
+    }
   }
 }

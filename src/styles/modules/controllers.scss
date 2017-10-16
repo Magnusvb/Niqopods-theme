@@ -1,5 +1,10 @@
 .control {
   display: flex;
+  justify-content: center;
+
+  @include media-query($medium-up) {
+    justify-content: flex-end;
+  }
 }
 
 .control-button {
