@@ -1,3 +1,4 @@
+<div class="collection-block">
 {% if section.settings.title != blank %}
   <h2>{{ section.settings.title | escape }}</h2>
 {% endif %}
@@ -30,6 +31,7 @@
 {% if section.blocks.size == 0 %}
   {% include 'no-blocks' %}
 {% endif %}
+</div>
 
 {% schema %}
   {
