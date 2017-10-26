@@ -1,8 +1,10 @@
 .collection-block {
   @include block-light;
   display: flex;
+  padding: 1rem;
+
 }
 
 .shopify-section {
-
+  margin-bottom: 3rem;
 }

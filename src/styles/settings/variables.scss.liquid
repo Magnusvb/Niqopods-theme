@@ -111,12 +111,3 @@ $z-index-skip-to-content: 10000; // really high to be safe of app markup
 
 /*================ SVG ================*/
 $svg-select-icon: #{'{{ "ico-select.svg" | asset_url }}'};
-
-/*================ MIXIM ================*/
-@mixin block-light {
-  background-color: lighten($color-secondary_2, 60%);
-}
-
-@mixin gradient-bg {
-  background: linear-gradient(70deg, $color-primary 60%, $color-primary-light);
-}
