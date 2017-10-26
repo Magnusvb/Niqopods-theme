@@ -13,7 +13,8 @@
 
 button {
   @include dropshadow;
-  background-color: $color-primary;
+  @include gradient-bg;
+  /*background-color: $color-primary;*/
   border: 1px solid $color-border;
   color: #fff;
   font-weight: 700;

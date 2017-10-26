@@ -116,3 +116,7 @@ $svg-select-icon: #{'{{ "ico-select.svg" | asset_url }}'};
 @mixin block-light {
   background-color: lighten($color-secondary_2, 60%);
 }
+
+@mixin gradient-bg {
+  background: linear-gradient(70deg, $color-primary 60%, $color-primary-light);
+}
