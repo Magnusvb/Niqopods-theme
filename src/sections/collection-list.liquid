@@ -1,8 +1,7 @@
-<div class="collection-block">
 {% if section.settings.title != blank %}
-  <!--<h2>{{ section.settings.title | escape }}</h2>-->
+  <h2 class="indented">{{ section.settings.title | escape }}</h2>
 {% endif %}
-
+<div class="collection-block">
 {% for block in section.blocks limit: section.blocks.size %}
   <div {{ block.shopify_attributes }}>
     {%- assign collection = collections[block.settings.collection] -%}
@@ -17,7 +16,7 @@
         {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg placeholder-svg--small' }}
       {% endif %}
 
-      <p>
+      <p class="indented">
         {% if collection == empty %}
           {{ 'homepage.onboarding.collection_title' | t }}
         {% else %}

@@ -1,8 +1,59 @@
+/*-------------- Hero banners home page -------------------*/
+.hero {
+  display: flex;
+  /*flex-wrap: wrap;*/
+  flex-direction: column;
+  align-items: center;
+
+  @include media-query($medium-up) {
+    flex-direction: row;
+  }
+}
+
+.hero-item {
+  flex: 1 1;
+  padding-bottom: 1rem;
+
+  @include media-query($medium-up) {
+    padding-right: 1rem;
+
+    &:last-of-type {
+      padding-right: 0;
+      align-self: center;
+    }
+  }
+}
+
+/*-------------- Collections block home page -------------------*/
 .collection-block {
   @include block-light;
   display: flex;
-  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+  
+  @include media-query($medium-up) {
+    flex-direction: row;
+    
+    div {
+      padding: 1rem .5rem;      
+    }
+  }
+}
 
+/*----- Featured collections with products home page -------*/
+.featured-collection-block {
+  display: flex;
+  flex-wrap: wrap;
+
+  .featured-collection_product {
+    /*border: 1px solid red;*/
+    flex: 1 1 50%;
+    padding: 1rem;
+    
+    @include media-query($medium-up) {
+      flex-basis: 25%;
+    }
+  }
 }
 
 .shopify-section {
