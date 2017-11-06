@@ -1,0 +1,46 @@
+#shopify-section-product {
+//   border: 1px solid lime;
+  width: 90%;
+  margin: auto;
+  
+  @include media-query($large-up) {
+    width: 70%;
+  }
+}
+
+.main-image {
+//   border: 1px solid red;
+  text-align: center;
+  img {
+//     border: 1px solid blue;
+  }
+}
+
+.image-thumb_list {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.image-thumb {
+  border: 1px dotted $color-secondary_2;
+  flex: 1;
+  margin: .3rem;
+}
+
+.qty-price-wrapper {
+//   border: 1px solid lime;
+  margin: 1rem 0;
+  display: flex;
+}
+
+.quantity-selector {
+  border: 1px solid red;
+  flex: 1 1 60%;
+}
+
+.price {
+  border: 1px solid blue;
+  font-family: $font-stack-header;
+  font-size: 2rem;
+  flex: 1 1 40%;
+}
