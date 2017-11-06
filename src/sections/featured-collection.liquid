@@ -1,15 +1,15 @@
-<div class="featured-collection-block">
-  {% if section.settings.title != blank %}
-    <!--<h2>{{ section.settings.title | escape }}</h2>-->
-  {% endif %}
+{% if section.settings.title != blank %}
+  <h2>{{ section.settings.title | escape }}</h2>
+{% endif %}
 
+<div class="featured-collection-block">
   {%- assign collection = collections[section.settings.collection] -%}
 
   {% for product in collection.products limit: 4 %}
     <div class="featured-collection_product">
       <a href="{{ product.url | within: collection }}">
         {{ product.featured_image.src | img_url: '480x480' | img_tag: product.title }}
-        <p>{{ product.title }}</p>
+        <h3>{{ product.title }}</h3>
       </a>
 
       <p>
@@ -34,6 +34,7 @@
 
         {% endif %}
       </p>
+    </div>
     {% else %}
 
       {% for i in (1..6) %}
@@ -48,7 +49,6 @@
 
         <p>{{ 1999 | money }}</p>
     {% endfor %}
-  </div>
   {% endfor %}
 </div>
 
