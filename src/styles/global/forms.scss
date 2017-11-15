@@ -26,6 +26,11 @@ textarea {
   min-height: 100px;
 }
 
+label {
+  font-family: metropolis-regular;
+  font-size: 1.2rem;
+}
+
 /*================ Custom select style ================*/
 select {
   @include prefix(appearance, none, webkit moz spec);

@@ -1,5 +1,5 @@
 #shopify-section-product {
-//   border: 1px solid lime;
+	border: 1px solid lime;
   width: 90%;
   margin: auto;
   
@@ -12,7 +12,7 @@
   /*border: 1px solid red;*/
   text-align: center;
   img {
-//     border: 1px solid blue;
+  	/*border: 1px solid blue;*/
   }
 }
 
@@ -28,19 +28,19 @@
 }
 
 .qty-price-wrapper {
-//   border: 1px solid lime;
+	border: 1px solid lime;
   margin: 1rem 0;
   display: flex;
 }
 
 .quantity-selector {
-  /*border: 1px solid red;*/
+  border: 1px solid red;
   flex: 1 1 60%;
 }
 
 .price {
-  /*border: 1px solid blue;*/
-  font-family: $font-stack-header;
-  font-size: 2rem;
+  border: 1px solid blue;
+  font-family: metropolis-bold;
+  font-size: 3rem;
   flex: 1 1 40%;
 }
