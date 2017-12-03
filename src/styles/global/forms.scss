@@ -10,6 +10,9 @@ select {
   border-radius: $borderradius;
   max-width: 100%;
   padding: 0.5rem;
+  font-family: metropolis-bold;
+  font-size: 1.1rem;
+  margin: .3rem;
 
   &:focus {
     border-left: 2px solid $color-border;

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="{{ settings.color_primary }}">
   <link rel="canonical" href="{{ canonical_url }}">
-  
+
   <!--<link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Serif" rel="stylesheet">-->
 
   {% if settings.favicon != blank %}
@@ -70,6 +70,7 @@
   {% section 'header' %}
 
   <main role="main" id="MainContent">
+    {% include 'breadcrumb' %}
     {{ content_for_layout }}
   </main>
 

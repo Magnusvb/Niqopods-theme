@@ -1,8 +1,8 @@
 #shopify-section-product {
-	border: 1px solid lime;
+	/*border: 1px solid lime;*/
   width: 90%;
   margin: auto;
-  
+
   @include media-query($large-up) {
     width: 70%;
   }
@@ -19,28 +19,61 @@
 .image-thumb_list {
   display: flex;
   margin-top: 1rem;
+  justify-content: center;
 }
 
 .image-thumb {
-  border: 1px dotted $color-secondary_2;
-  flex: 1;
-  margin: .3rem;
+  /*border: 1px dotted $color-secondary_2;*/
+  flex: 1 1 0px;
+  margin: .5rem;
+  text-align: center;
 }
 
 .qty-price-wrapper {
 	border: 1px solid lime;
   margin: 1rem 0;
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include media-query($large-up) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .quantity-selector {
-  border: 1px solid red;
-  flex: 1 1 60%;
+  /*border: 1px solid red;*/
+  flex: none;
+  /*margin-bottom: 1rem;*/
+
+  @include media-query($large-up) {
+    /*margin: 0 2rem;*/
+    margin-left: auto;
+    /*margin-right: 1rem;*/
+    /*margin-bottom: 0;*/
+  }
 }
 
 .price {
-  border: 1px solid blue;
-  font-family: metropolis-bold;
-  font-size: 3rem;
-  flex: 1 1 40%;
+  /*border: 1px solid blue;*/
+  flex: none;
+  white-space: nowrap;
+  margin-right: 1rem;
+}
+
+.description-wrapper {
+  margin: 1rem auto;
+  width: 90%;
+
+  @include media-query($large-up) {
+    margin: 1rem auto;
+    width: 70%;
+  }
+}
+
+#Quantity {
+  max-width: 5rem;
+  min-width: 4rem;
 }
