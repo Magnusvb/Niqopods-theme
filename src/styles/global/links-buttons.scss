@@ -27,6 +27,11 @@ button {
   text-decoration: none;
   vertical-align: middle;
   white-space: nowrap;
+  
+  &:hover {
+    @include dropshadow-hover;
+    background-color: lighten($primary-button-color, 15%);
+  }
 }
 
 .search-button {

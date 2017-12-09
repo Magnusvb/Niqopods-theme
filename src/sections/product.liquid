@@ -46,10 +46,8 @@
             {% endif %}
           </div>
         <article class="qty-price-wrapper">
-
-
           {% unless product.has_only_default_variant %}
-        {% for option in product.options_with_values %}
+          {% for option in product.options_with_values %}
           <div class="selector-wrapper js">
             <label for="SingleOptionSelector-{{ forloop.index0 }}">
               {{ option.name }}
@@ -82,7 +80,7 @@
         {% endfor %}
       </select>
 
-          <div class="quantity-selector">
+          <div class="quantity-selector selector-wrapper">
           	<label for="Quantity">{{ 'products.product.quantity' | t }}</label>
             <input type="number" id="Quantity" name="quantity" value="1" min="1">
           </div>
