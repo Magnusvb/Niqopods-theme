@@ -30,7 +30,7 @@
     </div>
     <div class="collection-products">
     	{% for product in collection.products %}
-      <div>
+      	<div class="collection-products-item">
         <a href="{{ product.url | within: collection }}">
           <img src="{{ product.featured_image.src | img_url: '480x480' }}" alt="{{ product.featured_image.alt | escape }}">
         </a>
@@ -90,8 +90,8 @@
       {% else %}
         <p>{{ 'collections.general.no_matches' | t }}</p>
       {% endif %}
-
     {% endfor %}
+      
     </div>
   </div>
 
