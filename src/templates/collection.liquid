@@ -1,14 +1,19 @@
 {% paginate collection.products by 12 %}
-  <header role="banner">
-    <h1>{{ collection.title }}</h1>
-    {% if collection.description != blank %}
-      <div class="rte">
-        {{ collection.description }}
-      </div>
-    {% endif %}
+  <header role="banner" class="collection-header">
+    	<div class="collection-header-item">
+      	<h1>{{ collection.title }}</h1>
+    	</div>
+      {% if collection.description != blank %}
+        <div class="rte collection-header-item">
+          {{ collection.description }}
+        </div>
+      {% endif %}
+  </header>
 
-    {% if collection.all_tags.size > 0 %}
-      <ul>
+  <div class="collection-product-wrapper">
+    <div class="collection-alltags">
+    	{% if collection.all_tags.size > 0 %}
+      <ul class="collection-taglist">
         {% for tag in collection.all_tags %}
           {% if current_tags contains tag %}
             <li class="active">
@@ -20,12 +25,11 @@
             </li>
           {% endif %}
         {% endfor %}
-      </ul>
-    {% endif %}
-  </header>
-
-  <div>
-    {% for product in collection.products %}
+        </ul>
+      {% endif %}
+    </div>
+    <div class="collection-products">
+    	{% for product in collection.products %}
       <div>
         <a href="{{ product.url | within: collection }}">
           <img src="{{ product.featured_image.src | img_url: '480x480' }}" alt="{{ product.featured_image.alt | escape }}">
@@ -88,6 +92,7 @@
       {% endif %}
 
     {% endfor %}
+    </div>
   </div>
 
   {% if paginate.pages > 1 %}
