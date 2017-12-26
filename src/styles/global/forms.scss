@@ -8,12 +8,11 @@ textarea,
 select {
   border: 1px solid $color-border;
   border-radius: $borderradius;
-  /*max-width: 100%;*/
-  min-width: 0px;
-  padding: 0.5rem;
   font-family: metropolis-bold;
   font-size: 1.1rem;
   margin: .3rem;
+  min-width: 0px;
+  padding: .5rem;
 
   &:focus {
     border-left: 2px solid $color-border;

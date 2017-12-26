@@ -12,7 +12,8 @@
 
   <div class="collection-product-wrapper">
     <div class="collection-alltags">
-    	{% if collection.all_tags.size > 0 %}
+      {% if collection.all_tags.size > 0 %}
+      <h5>Filter products</h5>
       <ul class="collection-taglist">
         {% for tag in collection.all_tags %}
           {% if current_tags contains tag %}
@@ -91,7 +92,7 @@
         <p>{{ 'collections.general.no_matches' | t }}</p>
       {% endif %}
     {% endfor %}
-      
+
     </div>
   </div>
 
