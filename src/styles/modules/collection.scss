@@ -20,6 +20,10 @@
   display: flex;
   flex-wrap: wrap;
 
+  li {
+    margin: .3rem;
+  }
+
   @include media-query($large-up) {
     display: inherit;
   }
@@ -68,5 +72,39 @@
 
   @include media-query($medium-up) {
     flex: 1 1 30%;
+  }
+}
+
+.pagination {
+  font-size: .9rem;
+  font-family: metropolis-regular;
+  line-height: 1;
+  // text-align: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    margin: 0 .8rem;
+    // padding: .4rem;
+
+    a {
+      // border: 1px solid red;
+      padding: .4rem;
+    }
+  }
+
+  .page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $color-secondary_2;
+    border-radius: 2px;
+    min-width: 2rem;
+  }
+
+  .current {
+    background-color: lighten($color-secondary_2, 10%);
+    padding: .4rem;
   }
 }

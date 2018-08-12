@@ -1,11 +1,11 @@
 .control {
   display: flex;
   justify-content: center;
-  
+
   & > * {
-    /*border: 1px solid tomato;*/
+    // border: 1px solid tomato;
   }
-  
+
   @include media-query($medium-up) {
     justify-content: flex-end;
   }
