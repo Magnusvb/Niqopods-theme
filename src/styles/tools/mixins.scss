@@ -129,7 +129,7 @@
 }
 
 @mixin block-light {
-  background-color: $color-secondary_2;
+  background-color: lighten($color-secondary_2, 10%);
 }
 
 @mixin gradient-bg {
