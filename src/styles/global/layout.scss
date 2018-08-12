@@ -8,10 +8,13 @@
 }
 
 main {
+  /*border: 1px solid pink;*/
   max-width: $width-site;
   margin: auto;
 }
 
 footer {
   border-top: 1px solid $color-border;
+  margin-top: 3rem;
+  padding: 1rem;
 }

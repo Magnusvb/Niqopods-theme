@@ -16,6 +16,11 @@
   // Match the styles from RTE nested lists
   ul {
     list-style: disc outside;
+    margin-left: 0;
+
+    li {
+      line-height: 1.8;
+    }
 
     ul {
       list-style: circle outside;

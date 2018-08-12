@@ -13,12 +13,14 @@
 
 button {
   @include dropshadow;
-  @include gradient-bg;
-  /*background-color: $color-primary;*/
-  border: 1px solid $color-border;
-  color: #fff;
-  font-weight: 700;
-  padding: .5rem 1rem;
+  @include prefix('user-select', 'none', moz ms webkit spec);
+  @include prefix(appearance, none, webkit moz spec);
+  background-color: $primary-button-color;
+  border: 1px solid darken($primary-button-color, 20%);
+  color: $color-body-text;
+  font-family: metropolis-bold;
+  font-size: 1.2rem;
+  padding: 0.4rem 0.8rem;
   border-radius: $borderradius;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -26,9 +28,14 @@ button {
   text-decoration: none;
   vertical-align: middle;
   white-space: nowrap;
+
+  &:hover {
+    @include dropshadow-hover;
+    background-color: lighten($primary-button-color, 15%);
+  }
 }
 
-.search-button {
-  border-radius: 100%;
-  padding: .5rem;
+#js-toggle {
+  cursor: pointer;
+  color: $color-link;
 }

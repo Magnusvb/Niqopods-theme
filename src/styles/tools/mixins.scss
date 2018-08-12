@@ -124,8 +124,12 @@
   box-shadow: 0px 2px 4px 0px rgba(36, 35, 90, 0.60);
 }
 
+@mixin dropshadow-hover {
+  box-shadow: 0px 4px 5px 0px rgba(36, 35, 90, 0.50);
+}
+
 @mixin block-light {
-  background-color: lighten($color-secondary_2, 60%);
+  background-color: $color-secondary_2;
 }
 
 @mixin gradient-bg {

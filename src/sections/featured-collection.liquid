@@ -1,5 +1,5 @@
 {% if section.settings.title != blank %}
-  <h2>{{ section.settings.title | escape }}</h2>
+  <h5 class="indented">{{ section.settings.title | escape }}</h5>
 {% endif %}
 
 <div class="featured-collection-block">
@@ -9,7 +9,7 @@
     <div class="featured-collection_product">
       <a href="{{ product.url | within: collection }}">
         {{ product.featured_image.src | img_url: '480x480' | img_tag: product.title }}
-        <h3>{{ product.title }}</h3>
+        <h5>{{ product.title }}</h5>
       </a>
 
       <p>
