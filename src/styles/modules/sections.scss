@@ -27,11 +27,13 @@
 /*-------------- Collections block home page -------------------*/
 .collection-block {
   @include block-light;
+  background: linear-gradient(white, lighten($color-secondary_2, 10%));
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @include media-query($medium-up) {
+    background: linear-gradient(to right, white, lighten($color-secondary_2, 10%), white);
     flex-direction: row;
     padding-top: 2rem;
     justify-content: space-between;
