@@ -2,17 +2,9 @@
   display: flex;
   justify-content: center;
 
-  & > * {
-    // border: 1px solid tomato;
-  }
-
   @include media-query($medium-up) {
     justify-content: flex-end;
   }
-}
-
-.control-button {
-  // margin-left: -1.4rem;
 }
 
 .control-field {
