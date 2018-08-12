@@ -13,8 +13,8 @@
   <div class="collection-product-wrapper">
     <div class="collection-alltags">
       {% if collection.all_tags.size > 0 %}
-      <h5>Filter products</h5>
-      <ul class="collection-taglist">
+      <h5>Filter products <span id="js-toggle">{% include 'icon-plus' %}</span></h5>
+      <ul class="collection-taglist" id="js-notdisplayed">
         {% for tag in collection.all_tags %}
           {% if current_tags contains tag %}
             <li class="active">

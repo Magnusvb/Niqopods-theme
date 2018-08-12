@@ -68,3 +68,7 @@
   z-index: $z-index-skip-to-content;
   transition: none;
 }
+
+#js-notdisplayed {
+  display: none;
+}

@@ -29,6 +29,10 @@ $(document).ready(function() {
     slate.a11y.pageLinkFocus($(evt.currentTarget.hash));
   });
 
+  $('#js-toggle').click(function() {
+    $('ul.collection-taglist').toggle('300');
+  });
+
   // Wrap videos in div to force responsive layout.
   slate.rte.wrapTable();
   slate.rte.iframeReset();

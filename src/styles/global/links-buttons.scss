@@ -34,3 +34,8 @@ button {
     background-color: lighten($primary-button-color, 15%);
   }
 }
+
+#js-toggle {
+  cursor: pointer;
+  color: $color-link;
+}
