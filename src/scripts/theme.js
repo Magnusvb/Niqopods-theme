@@ -29,9 +29,15 @@ $(document).ready(function() {
     slate.a11y.pageLinkFocus($(evt.currentTarget.hash));
   });
 
+  // Show and hide the tag list
   $('#js-toggle').click(function() {
     $('ul.collection-taglist').toggle('300');
   });
+
+  // Switch image with click
+  $('.image-thumb').on('click', function() {
+    $('#feature-image').attr('src', $(this).data('image'));
+  })
 
   // Wrap videos in div to force responsive layout.
   slate.rte.wrapTable();
