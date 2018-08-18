@@ -18,24 +18,11 @@
 }
 
 header {
-  // border: 1px solid rgb(230, 42, 131);
   display: flex;
   flex-flow: column;
-
-  // @include media-query($large-up) {
-  //   flex-flow: row;
-  //   flex-wrap: wrap;
-  //   padding: 1rem;
-  // }
-
-  // @include media-query($widescreen) {
-  //   align-items: center;
-  //   flex-wrap: nowrap;
-  // }
 }
 
 .masthead {
-  // border: 1px solid lime;
   display: flex;
   flex-flow: column;
 
@@ -46,14 +33,6 @@ header {
   @include media-query($big-up) {
     flex-flow: row;
   }
-
-  // @include media-query($large-up) {
-  //   flex: 1 1 100%;
-  // }
-
-  // @include media-query($widescreen) {
-  //   flex: 2 1 60%;
-  // }
 }
 
 .header-item {
@@ -63,10 +42,7 @@ header {
 }
 
 .logotyp {
-  // border: 1px solid blueviolet;
-
   @include media-query($big-up) {
-    // flex: 3 1 auto;
     padding: 0 1rem;
   }
 
@@ -76,7 +52,6 @@ header {
 }
 
 .customer-search {
-  // border: 1px solid green;
   display: flex;
   flex-flow: column;
 
@@ -94,11 +69,9 @@ header {
 }
 
 .customer {
-  // border: 1px solid blue;
   flex: 1;
 
   @include media-query($medium-up) {
-    /*border-left: 1px solid lighten($color-primary-light, 35%);*/
     padding-left: 1rem;
     flex: 0 0 auto;
   }
@@ -118,7 +91,6 @@ header {
 }
 
 .search {
-  // border: 1px solid border-left: s;iolet;
   flex: 1;
   @include media-query($medium-up) {
     order: -1;
@@ -129,12 +101,9 @@ header {
 
   @include media-query($big-up) {
     border-right: 0;
-    // flex: 0 0 auto;
-    // flex: 2;
   }
 
   @include media-query($widescreen) {
-    // flex: 1.5;
     white-space: nowrap;
   }
 }
@@ -148,8 +117,6 @@ header {
 
 .site-nav {
   display: flex;
-  // flex-wrap: wrap;
-  // align-items: center;
   justify-content: center;
   flex-direction: column;
 
@@ -173,8 +140,6 @@ header {
   }
 
   @include media-query($medium-up) {
-    // flex-wrap: nowrap;
-
     li {
       border: 0;
       border-right: 1px solid $color-secondary_2;
@@ -188,20 +153,11 @@ header {
 
   @include media-query($widescreen) {
     flex-wrap: wrap;
-
-    li {
-      // border: 1px solid $color-secondary_2;
-      // flex-basis: 30%;
-      &:last-of-type {
-        // border-right: 1px solid $color-secondary_2;
-      }
-    }
   }
 }
 
 .site-nav--active {
   background-color: $color-secondary_2;
-  /*border-bottom: 1px solid $color-primary;*/
 }
 
 .breadcrumb {
