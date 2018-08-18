@@ -35,6 +35,10 @@ header {
   }
 }
 
+nav {
+  border-top: 1px solid $color-secondary_2;
+}
+
 .header-item {
   flex: 1 1 auto;
   margin-bottom: 1rem;
