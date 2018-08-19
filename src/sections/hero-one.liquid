@@ -1,0 +1,44 @@
+<div class="hero-one">
+{% if block.settings.image != blank %}
+{% for block in section.blocks limit: section.block.size %}
+<div class="heroone-item">
+  <a href="{{ block.settings.heroonelink }}"><img src="{{ block.settings.image }}" alt=""></a>
+</div>
+{% endfor %}
+{% else %}
+  <div class="hero-item">
+    {{ 'placeholder-banner-1600.png' | asset_url | img_tag: 'placeholder' }}
+  </div>
+{% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "Hero one",
+    "max_blocks": 1,
+    "blocks": [
+      {
+        "type": "image_picker",
+        "name": "Add image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "heroimage",
+            "label": "Hero image"
+          },
+          {
+            "id": "herolink",
+            "type": "url",
+         		"label": "Hero link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+    {
+      "name": "Hero one banner",
+      "category": "Banners"
+    }
+  ]
+  }
+{% endschema %}
