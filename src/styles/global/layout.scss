@@ -18,3 +18,35 @@ footer {
   margin-top: 3rem;
   padding: 1rem;
 }
+
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-item {
+  // border: 1px solid pink;
+}
+
+.footer-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  li {
+    // border: 1px solid blue;
+    flex: 0 1 30%;
+    margin: 1rem;
+    text-align: center;
+  }
+}
+
+.footer-social,
+.footer-payment {
+  display: flex;
+  justify-content: center;
+
+  li {
+    margin: 0 1rem;
+  }
+}

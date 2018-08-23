@@ -91,7 +91,11 @@ nav {
 }
 
 .customer-links > li {
-  line-height: 1.6;
+  line-height: 2.6;
+
+  @include media-query($medium-up) {
+    line-height: 1.8;
+  }
 }
 
 .search {
@@ -128,6 +132,7 @@ nav {
     border: 1px solid $color-secondary_2;
     flex: 1;
     margin-top: -1px;
+    white-space: nowrap;
   }
 
   a {
@@ -169,4 +174,5 @@ nav {
   font-family: metropolis-regular;
   width: 90%;
   margin: 0 auto 1rem auto;
+  border: none;
 }

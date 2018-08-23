@@ -6,6 +6,7 @@
 input,
 textarea,
 select {
+  -webkit-appearance: none;
   border: 1px solid $color-border;
   border-radius: $borderradius;
   font-family: metropolis-bold;
@@ -32,6 +33,10 @@ textarea {
 label {
   font-family: metropolis-regular;
   font-size: 1.2rem;
+}
+
+input[type='search'] {
+  -webkit-appearance: none;
 }
 
 /*================ Custom select style ================*/
