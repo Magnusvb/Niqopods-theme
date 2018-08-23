@@ -42,6 +42,11 @@ button {
   }
 }
 
+.secondary-btn {
+  @extend button;
+  background-color: lighten($primary-button-color, 30%);
+}
+
 #js-toggle {
   cursor: pointer;
   color: $color-link;
