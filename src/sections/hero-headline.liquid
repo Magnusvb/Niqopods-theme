@@ -1,16 +1,12 @@
 <div class="hero-headline">
-{% if block.settings.text != blank %}
 {% for block in section.blocks limit: section.block.size %}
 <div class="heroone-headline">
-  <a href="{{ block.settings.heroonelink }}"><img src="{{ block.settings.image }}" alt=""></a>
   <h1>{{ block.settings.heroheadline }}</h1>
+  <div class="herointro">
+    <p class="intro">{{ block.settings.herotext }}</p>
+  </div>
 </div>
 {% endfor %}
-{% else %}
-  <div class="hero-item">
-    <h1>Almost like snus!</h1>
-  </div>
-{% endif %}
 </div>
 
 {% schema %}
@@ -26,6 +22,11 @@
             "type": "text",
             "id": "heroheadline",
             "label": "Hero headline"
+          },
+          {
+            "id": "herotext",
+            "type": "richtext",
+            "label": "Hero text"
           }
         ]
       }
