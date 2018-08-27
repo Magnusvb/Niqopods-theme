@@ -25,7 +25,7 @@
 
 .imagethumb {
   // border: 1px solid rebeccapurple;
-  flex: 1 1 25%;
+  flex: 1 1 20%;
   margin: .5rem;
   // text-align: center;
 
@@ -45,32 +45,32 @@
   flex-direction: column;
   align-items: stretch; //flex-start
 
-  @include media-query($large-up) {
+  @include media-query($small-up) {
     flex-direction: row;
-    /*align-items: center;*/
     justify-content: flex-start;
 
     button {
-      margin-left: 1rem;
+      margin-left: auto;
     }
   }
 }
 
 .quantity-selector {
-  /*border: 1px solid red;*/
   flex: none;
-
-  @include media-query($large-up) {
-    margin-left: auto;
-  }
 }
 
+// .add-to-cart {
+//   @include media-query($small-up) {
+//     margin-left: auto;
+//   }
+// }
+
 .selector-wrapper {
-  /*border: 1px solid red;*/
+  // border: 1px solid green;
   display: flex;
   flex-direction: column;
+  margin-right: 1rem;
   label {
-    /*border: 1px solid green;*/
     display: inline-block;
     width: 6rem;
   }

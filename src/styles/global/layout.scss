@@ -18,3 +18,169 @@ footer {
   margin-top: 3rem;
   padding: 1rem;
 }
+
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  li {
+    // border: 1px solid blue;
+    flex: 0 1 30%;
+    margin: 1rem;
+    text-align: center;
+  }
+}
+
+.footer-social,
+.footer-payment {
+  display: flex;
+  justify-content: center;
+
+  li {
+    margin: 0 1rem;
+  }
+}
+
+// Cart -----------------------------------*/
+.cart-section {
+	// border: 1px solid lime;
+  width: 90%;
+  margin: auto;
+
+  @include media-query($large-up) {
+    // width: 70%;
+  }
+}
+
+.cart-table-wrapper {
+  // border: 1px solid burlywood;
+}
+
+.cart-table-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $color-border;
+
+  h4 {
+    // border: 1px solid blue;
+    flex: 1;
+  }
+
+  .cart-table-header-title {
+    width: 48%;
+    flex: 0 1 auto;
+  }
+}
+
+.cart-table-items {
+  border-bottom: 1px solid $color-secondary_2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .6rem;
+  padding: .4rem 0;
+
+  @include media-query($small-up) {
+    flex-direction: row;
+  }
+}
+
+.cart-item-title {
+  display: flex;
+  align-items: center;
+  flex: 1 1 30%;
+
+  small {
+    display: inline-block;
+    /*margin-left: 2rem;*/
+    margin-top: 1rem;
+  }
+}
+
+.cart-item-image {
+  margin-right: 1rem;
+  flex: 0 1 auto;
+}
+
+.cart-price-qty {
+  // border: 1px solid lightcoral;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: .4rem 0 1rem 0;
+  width: 100%;
+
+  &>* {
+    flex: auto;
+  }
+
+  @include media-query($small-up) {
+    width: 50%;
+    flex: 0 1 auto;
+  }
+}
+
+.numbers {
+  text-align: right;
+}
+
+.input-qty {
+  width: 5rem;
+}
+
+.cart-extra {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: column;
+
+  @include media-query($small-up) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.cart-subtotal {
+  text-align: right;
+}
+
+.cart-notes {
+  display: flex;
+
+  label {
+    margin-right: 1rem;
+  }
+}
+
+.remove-link {
+  display: inline-block;
+  color: $color-error;
+  // margin-left: 1rem;
+}
+
+.hide-on-desktop {
+  @include media-query($small-up) {
+    display: none;
+  }
+}
+
+.hide-on-mobile {
+  display: none;
+  @include media-query($small-up) {
+    display: flex;
+  }
+}
+
+.show-at-medium {
+  display: none;
+  @include media-query($small-up) {
+    display: flex;
+  }
+}
