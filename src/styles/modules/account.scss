@@ -1,0 +1,21 @@
+.loginform {
+  border: 1px solid $color-border;
+  border-radius: 3px;
+  width: 40%;
+  margin: 0 auto;
+  padding: 1.4rem
+}
+
+.login-links {
+  margin-top: 2rem;
+
+  li {
+    line-height: 2;
+  }
+}
+
+.account-wrapper {
+  // display: flex;
+  // flex-direction: column;
+  padding: 0 2rem;
+}

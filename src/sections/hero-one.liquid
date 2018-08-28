@@ -1,15 +1,9 @@
 <div class="hero-one">
-{% if block.settings.image != blank %}
 {% for block in section.blocks limit: section.block.size %}
 <div class="heroone-item">
-  <a href="{{ block.settings.heroonelink }}"><img src="{{ block.settings.image }}" alt=""></a>
+  <a href="{{ block.settings.herolink }}">{{ block.settings.heroimage | img_url: 'master' | img_tag }}</a>
 </div>
 {% endfor %}
-{% else %}
-  <div class="hero-item">
-    {{ 'placeholder-banner-1600.png' | asset_url | img_tag: 'placeholder' }}
-  </div>
-{% endif %}
 </div>
 
 {% schema %}

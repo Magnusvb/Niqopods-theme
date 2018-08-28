@@ -1,0 +1,42 @@
+<div class="hero-headline">
+{% for block in section.blocks limit: section.block.size %}
+<div class="heroone-headline">
+  <h1>{{ block.settings.heroheadline }}</h1>
+  <div class="herointro">
+    <p class="intro">{{ block.settings.herotext }}</p>
+  </div>
+</div>
+{% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Hero headline",
+    "max_blocks": 1,
+    "blocks": [
+      {
+        "type": "text",
+        "name": "The big headline",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heroheadline",
+            "label": "Hero headline"
+          },
+          {
+            "id": "herotext",
+            "type": "richtext",
+            "label": "Hero text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+    {
+      "name": "Hero Headline",
+      "category": "Banners"
+    }
+  ]
+  }
+{% endschema %}
+
