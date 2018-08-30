@@ -5,7 +5,9 @@
 
   <div class="account-address">
     <div class="account-address-item">
-      <button type="button" class="btn address-new-toggle">{{ 'customer.addresses.add_new' | t }}</button>
+      <div class="address-button-set">
+        <button type="button" class="btn address-new-toggle">{{ 'customer.addresses.add_new' | t }}</button>
+      </div>
       <p><a href="/account">{{ 'customer.account.return' | t }}</a></p>
 
       <div id="AddressNewForm" class="hide adress-form">
@@ -133,10 +135,12 @@
         </div>
 
         {% comment %} <input type="submit" class="button" value="{{ 'customer.addresses.add' | t }}"> {% endcomment %}
-        <button type="button" class="address-new-toggle secondary-btn">
-          {{ 'customer.addresses.cancel' | t }}
-        </button>
-        <button class="button">{{ 'customer.addresses.add' | t }}</button>
+        <div class="address-button-set">
+          <button type="button" class="address-new-toggle secondary-btn">
+            {{ 'customer.addresses.cancel' | t }}
+          </button>
+          <button class="button">{{ 'customer.addresses.add' | t }}</button>
+        </div>
         {% endform %}
 
       </div>
@@ -152,12 +156,14 @@
           {% endif %}
           {{ address | format_address }}
 
-          <button type="button" class="address-delete warning-btn" data-form-id="{{ address.id }}" data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}">
-            {{ 'customer.addresses.delete' | t }}
-          </button>
-          <button type="button" class="address-edit-toggle" data-form-id="{{ address.id }}">
-            {{ 'customer.addresses.edit' | t }}
-          </button>
+          <div class="address-button-set">
+            <button type="button" class="address-delete warning-btn" data-form-id="{{ address.id }}" data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}">
+              {{ 'customer.addresses.delete' | t }}
+            </button>
+            <button type="button" class="address-edit-toggle" data-form-id="{{ address.id }}">
+              {{ 'customer.addresses.edit' | t }}
+            </button>
+          </div>
 
           <div id="EditAddress_{{ address.id }}" class="hide address-form">
             {% form 'customer_address', address %}
@@ -287,10 +293,12 @@
             </div>
 
             {% comment %} <input type="submit" class="button" value="{{ 'customer.addresses.update' | t }}"> {% endcomment %}
-            <button type="button" class="address-edit-toggle secondary-btn" data-form-id="{{ form.id }}">
-              {{ 'customer.addresses.cancel' | t }}
-            </button>
-            <button type="submit" class="button">{{ 'customer.addresses.update' | t }}</button>
+            <div class="address-button-set">
+              <button type="button" class="address-edit-toggle secondary-btn" data-form-id="{{ form.id }}">
+                {{ 'customer.addresses.cancel' | t }}
+              </button>
+              <button type="submit" class="button">{{ 'customer.addresses.update' | t }}</button>
+            </div>
 
             {% endform %}
         </div>

@@ -198,25 +198,15 @@
   display: flex;
   flex-direction: column;
 
-  @include media-query($medium-up) {
+  @include media-query($large-up) {
     flex-direction: row;
   }
 }
 
 .account-address-item {
-  /*border: 1px solid lime;*/
+  // border: 1px solid lime;
   flex: 1 1 0px;
   padding: 0 1rem;
-}
-
-.address-edit-toggle,
-.address-delete,
-.address-update {
-  // margin-bottom: 2rem;
-}
-
-.address-form {
-  /*display: flex;*/
 }
 
 .address-form-item {
@@ -245,4 +235,8 @@
   input[type=checkbox] {
     margin-bottom: 0;
   }
+}
+
+.address-button-set {
+  margin-bottom: 2rem;
 }
