@@ -12,29 +12,31 @@
       <label for="CustomerEmail" class="label-hidden">
         {{ 'customer.login.email' | t }}
       </label>
-      <input type="email"
-             name="customer[email]"
-             id="CustomerEmail"
-             class="{% if form.errors contains 'email' %}input-error{% endif %}"
-             placeholder="{{ 'customer.login.email' | t }}"
-             spellcheck="false"
-             autocomplete="off"
-             autocapitalize="off"
-             autofocus>
 
-        {% if form.password_needed %}
-          <label for="CustomerPassword" class="label-hidden">
-            {{ 'customer.login.password' | t }}
-          </label>
-          <input type="password"
-                 name="customer[password]"
-                 id="CustomerPassword"
-                 class="{% if form.errors contains 'password' %}input-error{% endif %}"
-                 placeholder="{{ 'customer.login.password' | t }}">
-        {% endif %}
+        <input type="email"
+               name="customer[email]"
+               id="CustomerEmail"
+               class="{% if form.errors contains 'email' %}input-error{% endif %}"
+               placeholder="{{ 'customer.login.email' | t }}"
+               spellcheck="false"
+               autocomplete="off"
+               autocapitalize="off"
+               autofocus>
 
-        {% comment %} <input type="submit" class="btn" value="{{ 'customer.login.sign_in' | t }}"> {% endcomment %}
-        <button type="submit" class="button">{{ 'customer.login.sign_in' | t }}</button>
+          {% if form.password_needed %}
+            <label for="CustomerPassword" class="label-hidden">
+              {{ 'customer.login.password' | t }}
+            </label>
+            <input type="password"
+                   name="customer[password]"
+                   id="CustomerPassword"
+                   class="{% if form.errors contains 'password' %}input-error{% endif %}"
+                   placeholder="{{ 'customer.login.password' | t }}">
+          {% endif %}
+
+          {% comment %} <input type="submit" class="btn" value="{{ 'customer.login.sign_in' | t }}"> {% endcomment %}
+          <button type="submit" class="button">{{ 'customer.login.sign_in' | t }}</button>
+
 
       <ul class="login-links">
         <li><a href="/">{{ 'customer.login.cancel' | t }}</a></li>
