@@ -42,35 +42,35 @@
   // border: 1px solid purple;
   border-top: 1px solid $color-secondary_2;
   padding-left: 1rem;
+  padding-top: 1rem;
 
   @include media-query($large-up) {
     // border-left: 1px solid $color-secondary_2;
     border-top: 0;
     flex: 0 0 20%;
-    // width: 20%;
   }
 }
 
 .collection-products {
-  border-right: 1px solid $color-secondary_2;
   flex: auto;
   order: -1;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 2rem;
 
   @include media-query($large-up) {
+    border-right: 1px solid $color-secondary_2;
     width: 80%;
   }
 }
 
 .collection-products-item {
-  // border: 1px solid lime;
-  flex: 1 1 50%;
+  flex: 0 1 50%;
   padding: .5rem;
 
   @include media-query($medium-up) {
-    flex: 1 1 30%;
+    flex: 0 1 30%;
   }
 }
 
