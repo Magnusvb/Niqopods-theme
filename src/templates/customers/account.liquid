@@ -5,28 +5,35 @@
 
   {% paginate customer.orders by 20 %}
     {% if customer.orders.size != 0 %}
-      <table class="responsive-table">
-        <thead>
-          <tr>
-            <th>{{ 'customer.orders.order_number' | t }}</th>
-            <th>{{ 'customer.orders.date' | t }}</th>
-            <th>{{ 'customer.orders.payment_status' | t }}</th>
-            <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
-            <th>{{ 'customer.orders.total' | t }}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for order in customer.orders %}
-            <tr class="responsive-table-row">
-              <td data-label="{{ 'customer.orders.order_number' | t }}">{{ order.name | link_to: order.customer_url }}</td>
-              <td data-label="{{ 'customer.orders.date' | t }}">{{ order.created_at | date: format: 'month_day_year' }}</td>
-              <td data-label="{{ 'customer.orders.payment_status' | t }}">{{ order.financial_status_label }}</td>
-              <td data-label="{{ 'customer.orders.fulfillment_status' | t }}">{{ order.fulfillment_status_label }}</td>
-              <td data-label="{{ 'customer.orders.total' | t }}">{{ order.total_price | money }}</td>
-            </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+      <section class="order-history">
+      <div class="order-history-header show-at-medium">
+        <h5 class="">{{ 'customer.orders.order_number' | t }}</h5>
+        <h5 class="">{{ 'customer.orders.date' | t }}</h5>
+        <h5 class="">{{ 'customer.orders.payment_status' | t }}</h5>
+        <h5 class="">{{ 'customer.orders.fulfillment_status' | t }}</h5>
+        <h5 class="numbers">{{ 'customer.orders.total' | t }}</h5>
+      </div>
+
+      {% for order in customer.orders %}
+        <div class="order-history-list">
+          <p data-label="{{ 'customer.orders.order_number' | t }}">
+            <span class="label-for-mobile">{{ 'customer.orders.order_number' | t }}: </span>{{ order.name | link_to: order.customer_url
+            }}</p>
+          <p data-label="{{ 'customer.orders.date' | t }}">
+            <span class="label-for-mobile">{{ 'customer.orders.date' | t }}: </span>{{ order.created_at | date: format: 'month_day_year'
+            }}</p>
+          <p data-label="{{ 'customer.orders.payment_status' | t }}">
+            <span class="label-for-mobile">{{ 'customer.orders.payment_status' | t }}: </span>{{ order.financial_status_label
+            }}</p>
+          <p data-label="{{ 'customer.orders.fulfillment_status' | t }}">
+            <span class="label-for-mobile">{{ 'customer.orders.fulfillment_status' | t }}: </span>{{ order.fulfillment_status_label
+            }}</p>
+          <p class="numbers" data-label="{{ 'customer.orders.total' | t }}">
+            <span class="label-for-mobile">{{ 'customer.orders.total' | t }}: </span>{{ order.total_price | money }}</p>
+        </div>
+    {% endfor %}
+  </section>
+
     {% else %}
       <p>{{ 'customer.orders.none' | t }}</p>
     {% endif %}

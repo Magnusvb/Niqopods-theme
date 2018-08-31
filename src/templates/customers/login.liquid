@@ -22,19 +22,19 @@
              autocapitalize="off"
              autofocus>
 
-      {% if form.password_needed %}
-        <label for="CustomerPassword" class="label-hidden">
-          {{ 'customer.login.password' | t }}
-        </label>
-        <input type="password"
-               name="customer[password]"
-               id="CustomerPassword"
-               class="{% if form.errors contains 'password' %}input-error{% endif %}"
-               placeholder="{{ 'customer.login.password' | t }}">
-      {% endif %}
+        {% if form.password_needed %}
+          <label for="CustomerPassword" class="label-hidden">
+            {{ 'customer.login.password' | t }}
+          </label>
+          <input type="password"
+                 name="customer[password]"
+                 id="CustomerPassword"
+                 class="{% if form.errors contains 'password' %}input-error{% endif %}"
+                 placeholder="{{ 'customer.login.password' | t }}">
+        {% endif %}
 
-      {% comment %} <input type="submit" class="btn" value="{{ 'customer.login.sign_in' | t }}"> {% endcomment %}
-      <button type="submit" class="button">{{ 'customer.login.sign_in' | t }}</button>
+        {% comment %} <input type="submit" class="btn" value="{{ 'customer.login.sign_in' | t }}"> {% endcomment %}
+        <button type="submit" class="button">{{ 'customer.login.sign_in' | t }}</button>
 
       <ul class="login-links">
         <li><a href="/">{{ 'customer.login.cancel' | t }}</a></li>

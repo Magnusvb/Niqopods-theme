@@ -72,3 +72,14 @@
 #js-notdisplayed {
   display: none;
 }
+
+.errors {
+  padding: .2rem;
+  background-color: $color-error;
+  color: $color-body-text_light;
+
+  ul {
+    padding: .2rem;
+    margin-bottom: 0;
+  }
+}
