@@ -47,9 +47,36 @@ footer {
   }
 }
 
-// Search page ----------------------------*/
+// Standard pages ----------------------------*/
 .standard-wrapper {
   padding: 0 2rem;
+}
+
+.search-result {
+  flex: auto;
+  /*order: -1;*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+
+  /*@include media-query($large-up) {
+    border-right: 1px solid $color-secondary_2;
+    width: 80%;
+  }*/
+  
+  li {
+    flex: 0 1 50%;
+    padding: .5rem;
+    
+    @include media-query($small-up) {
+      flex: 0 1 30%;
+    }
+  
+    @include media-query($medium-up) {
+      flex: 0 1 25%;
+    }
+  }
 }
 
 // Cart -----------------------------------*/
