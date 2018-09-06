@@ -1,5 +1,5 @@
 .template-password {
-  background-color: $color-primary;
+  background-color: lighten($color-secondary_2, 15%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,10 +7,10 @@
 }
 
 .loginbox {
-  border: 1px solid $color-border;
+  border: 1px solid $color-accent;
   background-color: $color-body;
   padding: 2rem 4rem;
-  border-radius: 1rem;
+  border-radius: 3px;
 
   header {
     padding: 0;
@@ -37,16 +37,31 @@
   }
 
   .enter-password {
-    margin-bottom: 1rem;
+    margin: 1rem 0;
   }
 
   footer {
     color: $color-body-text_medium;
-    margin-bottom: 1rem;
+    /*margin-bottom: 1rem;*/
   }
 
   h4 {
     padding-top: 1.5rem;
     /*border-top: 1px solid $color-border;*/
+  }
+}
+
+.owner-login {
+  margin: 3rem 0;
+}
+
+.storefront-password-form {
+  display: flex;
+  align-items: center;
+  input {
+    margin: 0;
+  }
+  label {
+    margin-right: 1rem;
   }
 }
