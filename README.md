@@ -1,1 +1,1 @@
-# Alice-Three-Shopify-theme
+# A Shopify theme for Niqopods store
