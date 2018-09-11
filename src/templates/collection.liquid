@@ -1,10 +1,10 @@
 {% paginate collection.products by 12 %}
   <header role="banner" class="collection-header">
-    	<div class="collection-header-item">
+    	<div class="collection-header-item collection-headline">
       	<h1>{{ collection.title }}</h1>
     	</div>
       {% if collection.description != blank %}
-        <div class="rte collection-header-item">
+        <div class="rte collection-header-item collection-description">
           {{ collection.description }}
         </div>
       {% endif %}
@@ -70,9 +70,9 @@
             <span class="sold-out">{{ 'products.product.sold_out' | t }}</span>
           {% endunless %}
         </p>
-          
+
         <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
-          
+
       </div>
 
     {% else %}
