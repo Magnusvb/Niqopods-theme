@@ -19,19 +19,18 @@
 .image-thumb_list {
   display: flex;
   margin-top: 1rem;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  justify-content: center;
+  // flex-wrap: wrap;
 }
 
 .imagethumb {
-  // border: 1px solid rebeccapurple;
-  flex: 1 1 20%;
+  border: 1px solid $color-secondary_2;
+  flex: 0 0 auto;
   margin: .5rem;
-  // text-align: center;
 
-  @include media-query($large-up) {
-    flex: 1 1 0px;
-  }
+  // @include media-query($large-up) {
+  //   flex: 0 0 auto;
+  // }
 
   a {
     cursor: pointer;
