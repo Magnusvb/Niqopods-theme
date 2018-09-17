@@ -1,3 +1,5 @@
+{% include 'bold-product' with product, hide_action: 'break' %}{% if bold_hidden_product %}{% break %}{%endif %}
+
 <div data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true" itemscope itemtype="http://schema.org/Product">
 
   {%- assign current_variant = product.selected_or_first_available_variant -%}
@@ -29,14 +31,14 @@
     <meta itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
     <link itemprop="availability" href="http://schema.org/{% if current_variant.available %}InStock{% else %}OutOfStock{% endif %}">
 
-    <form action="/cart/add" method="post" enctype="multipart/form-data">
+    <form action="/cart/add" method="post" enctype="multipart/form-data" class="shapp_qb_prod">
 
           <div class="price" data-price-wrapper>
             <span data-product-price>
               <h2>{{ current_variant.price | money }}</h2>
             </span>
 
-            {% if product.compare_at_price_max > product.price %}
+            {% if product.compare_at_price_max > bold_price %}
               <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
               <s data-compare-price>
                 {% if current_variant.compare_at_price > current_variant.price %}
@@ -71,6 +73,7 @@
 
       <select name="id" class="no-js" data-product-select>
         {% for variant in product.variants %}
+        {% include 'bold-variant' with variant, hide_action: 'skip' %}
           <option
             {% if variant == current_variant %}selected="selected"{% endif %}
             {% unless variant.available %}disabled="disabled"{% endunless %}
@@ -100,7 +103,22 @@
               </span>
           </button>
         </article>
+        {% unless qb_loaded == 'true' %}
+          <div class="shappify-qty-msg">{{bold_selected_or_first_available_variant.metafields.shappify_qb.pricing_html}}</div>{% assign qb_loaded = 'true' %}
+        {% endunless %}
+        <br>
       </form>
+
+      {% comment %} added by bold for hide single option selector {% endcomment %}
+      {% if bold_variants_size == 1 and product.variants.first.title contains 'Default' or product.variants.first.title contains '1+' %}
+      <script>
+      $(window).load(function(){
+      $('.selector-wrapper').hide();
+      });
+      </script>
+      {% endif %}
+      {% comment %} end of bold added code to hide single option selectore {% endcomment %}
+
     </div>
 
     <div class="rte">
@@ -121,7 +139,7 @@
 
   {% unless product == empty %}
     <script type="application/json" data-product-json>
-      {{ product | json }}
+      {% include 'bold-product', output: 'json' %}
     </script>
   {% endunless %}
 </div>

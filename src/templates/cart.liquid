@@ -1,6 +1,9 @@
 <div class="cart-section">
 {% if cart.item_count > 0 %}
   <h1>{{ 'cart.general.title' | t }}</h1>
+  <!-- Bold: Quantity Breaks - Cart Savings Banner -->
+  <div id="shappify-qty-cart-msg"></div>
+  <!-- // end Bold code -->
 
   <form action="/cart" method="post" novalidate>
   <section class="cart-table-wrapper">
