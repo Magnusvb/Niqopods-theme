@@ -109,16 +109,6 @@
         <br>
       </form>
 
-      {% comment %} added by bold for hide single option selector {% endcomment %}
-      {% if bold_variants_size == 1 and product.variants.first.title contains 'Default' or product.variants.first.title contains '1+' %}
-      <script>
-      $(window).load(function(){
-      $('.selector-wrapper').hide();
-      });
-      </script>
-      {% endif %}
-      {% comment %} end of bold added code to hide single option selectore {% endcomment %}
-
     </div>
 
     <div class="rte">
