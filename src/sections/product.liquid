@@ -50,7 +50,7 @@
         <article class="qty-price-wrapper">
           {% unless product.has_only_default_variant %}
           {% for option in product.options_with_values %}
-          <div class="selector-wrapper js">
+          <div class="selector-wrapper js" {% if bold_variants_size == 1 and bold_selected_or_first_available_variant.title contains 'Default' or bold_selected_or_first_available_variant.title contains '1+' %} style="display:none;"{% endif %}>
             <label for="SingleOptionSelector-{{ forloop.index0 }}">
               {{ option.name }}
             </label>
