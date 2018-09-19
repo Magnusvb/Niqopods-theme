@@ -38,7 +38,7 @@
               <h2>{{ current_variant.price | money }}</h2>
             </span>
 
-            {% if product.compare_at_price_max > bold_price %}
+            {% if bold_compare_at_price_max > bold_price %}
               <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
               <s data-compare-price>
                 {% if current_variant.compare_at_price > current_variant.price %}

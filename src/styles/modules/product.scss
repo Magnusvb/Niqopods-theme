@@ -75,6 +75,33 @@
   }
 }
 
+.shappify-qty-msg {
+  .shappify_qb_grid {
+    border: 1px solid $color-border;
+    border-radius: 3px;
+    border-collapse: collapse;
+    width: 100%;
+    @include media-query($small-up) {
+      width: 70%;
+    }
+    @include media-query($medium-up) {
+      width: 60%;
+    }
+    @include media-query($large-up) {
+      width: 50%;
+    }
+
+    thead {
+      background-color: $color-secondary_2;
+      text-align: left;
+
+      th {
+        border: 0;
+      }
+    }
+  }
+}
+
 .price {
   text-align: right;
   flex: none;
