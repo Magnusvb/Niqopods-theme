@@ -28,9 +28,9 @@
           <div class="cart-item-text">
           <a href="{{ item.url }}">{{ item.product.title }}</a>
 
-            {% unless item.product.has_only_default_variant %}
+            {% comment %} {% unless item.product.has_only_default_variant %}
               <p>{{ item.variant.title }}</p>
-            {% endunless %}
+            {% endunless %} {% endcomment %}
 
             <!-- <p>{{ item.vendor }}</p> -->
 
@@ -51,6 +51,7 @@
               {% endfor %}
             {% endif %}
 
+            <br>
             <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">
               <small class="remove-link">{% include 'icon-close' %} {{ 'cart.general.remove' | t }}</small>
             </a>
