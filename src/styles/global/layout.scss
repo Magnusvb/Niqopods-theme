@@ -52,6 +52,19 @@ footer {
   padding: 0 2rem;
 }
 
+.narrow-wrapper {
+  // margin: 0 auto;
+  width: 90%;
+
+  @include media-query($medium-up) {
+    width: 70%;
+  }
+
+  @include media-query($large-up) {
+    width: 50%;
+  }
+}
+
 .search-result {
   flex: auto;
   /*order: -1;*/
