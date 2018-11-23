@@ -6,6 +6,9 @@
   {%- assign collection = collections[section.settings.collection] -%}
 
   {% for product in collection.products limit: 4 %}
+
+  {% include 'bold-product' with product, hide_action: 'skip' %}
+
     <div class="featured-collection_product">
       <a href="{{ product.url | within: collection }}">
         {{ product.featured_image.src | img_url: '480x480' | img_tag: product.title }}

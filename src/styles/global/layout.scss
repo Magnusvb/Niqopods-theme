@@ -52,6 +52,19 @@ footer {
   padding: 0 2rem;
 }
 
+.narrow-wrapper {
+  // margin: 0 auto;
+  width: 90%;
+
+  @include media-query($medium-up) {
+    width: 70%;
+  }
+
+  @include media-query($large-up) {
+    width: 50%;
+  }
+}
+
 .search-result {
   flex: auto;
   /*order: -1;*/
@@ -64,15 +77,15 @@ footer {
     border-right: 1px solid $color-secondary_2;
     width: 80%;
   }*/
-  
+
   li {
     flex: 0 1 50%;
     padding: .5rem;
-    
+
     @include media-query($small-up) {
       flex: 0 1 30%;
     }
-  
+
     @include media-query($medium-up) {
       flex: 0 1 25%;
     }
@@ -210,4 +223,43 @@ footer {
   @include media-query($small-up) {
     display: flex;
   }
+}
+
+// Contact ---------------------------*/
+.contact-form {
+  max-width: 90vw;
+
+  @include media-query($small-up) {
+    max-width: 70vw;
+  }
+
+  @include media-query($large-up) {
+    max-width: 50vw;
+  }
+
+}
+.contact-form-item {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    // border: 1px solid lime;
+    flex: 1 1 30%;
+    white-space: nowrap;
+  }
+
+  input,
+  textarea {
+    // border: 1px solid pink;
+    flex: 1 1 70%;
+  }
+
+  @include media-query($medium-up) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.shopify-policy__container {
+  max-width: 600px;
 }

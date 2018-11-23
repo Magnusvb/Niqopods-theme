@@ -31,6 +31,7 @@
     </div>
     <div class="collection-products">
     	{% for product in collection.products %}
+      {% include 'bold-product' with product, hide_action: 'skip' %}
       	<div class="collection-products-item">
         <a href="{{ product.url | within: collection }}">
           <img src="{{ product.featured_image.src | img_url: '480x480' }}" alt="{{ product.featured_image.alt | escape }}">
@@ -40,30 +41,30 @@
           <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
         </p>
         <p>
-          {% if product.compare_at_price > product.price %}
+          {% if bold_compare_at_price > bold_compare_at_price %}
 
-            {% if product.price_varies %}
-              {%- assign sale_price = product.price | money -%}
+            {% if bold_price_varies %}
+              {%- assign sale_price = bold_price | money -%}
               {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
             {% else %}
               <span class="on-sale">{{ 'products.product.on_sale' | t }}</span>
-              {{ product.price | money }}
+              {{ bold_price | money }}
             {% endif %}
 
           {% else %}
 
-            {% if product.price_varies %}
-              {%- assign price = product.price | money -%}
+            {% if bold_price_varies %}
+              {%- assign price = bold_price | money -%}
               {{ 'products.product.from_text_html' | t: price: price }}
             {% else %}
-              {{ product.price | money }}
+              {{ bold_price | money }}
             {% endif %}
 
           {% endif %}
 
-          {% if product.compare_at_price > product.price %}
+          {% if bold_compare_at_price > bold_price %}
             <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
-            <s>{{ product.compare_at_price | money }}</s>
+            <s>{{ bold_compare_at_price | money }}</s>
           {% endif %}
 
           {% unless product.available %}
