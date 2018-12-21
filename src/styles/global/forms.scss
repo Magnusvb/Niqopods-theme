@@ -7,7 +7,9 @@ input,
 textarea,
 select {
   // -webkit-appearance: none;
-  border: 1px solid $color-border;
+  // border: 1px solid $color-border;
+  border: none;
+  background-color: hsl(210, 36%, 96%);
   border-radius: $borderradius;
   font-family: metropolis-bold;
   font-size: 1.1rem;

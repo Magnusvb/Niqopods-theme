@@ -20,7 +20,8 @@
     flex: 1 1 auto;
 
     @include media-query($medium-up) {
-      max-width: 50vw;
+      width: 50vw;
+      max-width: 50rem;
       margin-left: auto;
     }
   }
