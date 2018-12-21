@@ -72,7 +72,7 @@
   order: -1;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  // justify-content: space-between;
   margin-bottom: 2rem;
 
   @include media-query($large-up) {
@@ -84,6 +84,7 @@
 .collection-products-item {
   flex: 0 1 50%;
   padding: .5rem;
+  margin: .4rem;
 
   @include media-query($medium-up) {
     flex: 0 1 30%;
