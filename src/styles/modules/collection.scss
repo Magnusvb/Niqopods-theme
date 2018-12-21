@@ -37,6 +37,7 @@
 
   li {
     margin: .3rem;
+    padding-top: .8rem;
   }
 
   @include media-query($large-up) {
@@ -85,10 +86,10 @@
 .collection-products-item {
   flex: 0 1 50%;
   padding: .5rem;
-  margin: .4rem;
 
   @include media-query($medium-up) {
     flex: 0 1 30%;
+    margin: .4rem;
   }
 }
 
